@@ -1,0 +1,47 @@
+html {
+	position: relative;
+}
+
+body {
+	margin-bottom: 100px;
+	margin-top: 35px;
+}
+
+.jumbotron {
+	background-color:#F08080;
+}
+
+.jumbotron img {
+	width: 200px;
+	border: 3px solid #333;
+}
+
+hr {
+	width: 500px;
+	border-top: 3px solid #666;
+}
+
+section {
+	min-height: 500px;
+}
+
+.portofolio {
+	background-color: 	#CD5C5C;
+}
+
+.contact {
+	min-height: 500px;
+}
+
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100px;
+	height: 100 px;
+	background-color: #FAEBD7; 
+}
+
+
+
+

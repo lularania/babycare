@@ -1,0 +1,53 @@
+<?php 
+session_start();
+include 'koneksi.php';
+?>
+
+<?php
+$id_pelanggan = $_GET['id'];
+
+$ambil = $koneksi->query("SELECT * FROM pelanggan WHERE id_pelanggan='$id_pelanggan'");
+$pecah = $ambil->fetch_assoc();
+?>
+<?php
+
+$idpelangganyangbeli = $pecah["id_pelanggan"];
+
+$idpelangganyanglogin = $_SESSION["pelanggan"]["id_pelanggan"];
+
+if($idpelangganyangbeli!==$idpelangganyanglogin)
+{
+  echo "<script>alert('tidak dapat di akses');</script>";
+  echo "<script>location='Babycare.php';</script>";
+  exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="fontawesome-free/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="kontak.css">
+    <title> Informasi Akun | Baby Care</title>
+</head>
+<body>
+	<div class="container">
+		<div class="contact-box">
+			<div class="left"></div>
+			<div class="right">
+				<h2>Contact Us</h2>
+				<input type="text" class="field" placeholder="Your Name">
+				<input type="text" class="field" placeholder="Your Email">
+				<input type="text" class="field" placeholder="Phone">
+				<textarea placeholder="Message" class="field"></textarea>
+				<button class="btn">Send</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

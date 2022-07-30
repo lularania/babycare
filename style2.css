@@ -1,0 +1,28 @@
+.card p{
+	margin-top: -10px;
+	margin-bottom: 1px;
+}
+.row .card:hover{
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+	transform: scale(1.05);
+	
+}
+.content-arrange{
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+	justify-content: space-evenly;
+}
+
+@media (max-width: 200px)  {
+	.content-arrange{
+		padding-top: 4rem;
+		padding-bottom: 2rem;
+	}
+}
+
+@media (max-width: 465px) {
+	.content-arrange{
+		padding-top: 4rem;
+		padding-bottom: 1rem;
+	}
+}
